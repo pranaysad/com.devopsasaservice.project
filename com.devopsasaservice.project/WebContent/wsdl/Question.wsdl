@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://project.devopsasaservice.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://project.devopsasaservice.com" xmlns:intf="http://project.devopsasaservice.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://project.devopsasaservice.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getHTMLQuestion">
+    <complexType/>
+   </element>
+   <element name="getHTMLQuestionResponse">
+    <complexType>
+     <sequence>
+      <element name="getHTMLQuestionReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getXMLQuestion">
+    <complexType/>
+   </element>
+   <element name="getXMLQuestionResponse">
+    <complexType>
+     <sequence>
+      <element name="getXMLQuestionReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="roundrotate">
+    <complexType>
+     <sequence>
+      <element name="strOne" type="xsd:string"/>
+      <element name="strTwo" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="roundrotateResponse">
+    <complexType>
+     <sequence>
+      <element name="roundrotateReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getPlainTextQuestion">
+    <complexType/>
+   </element>
+   <element name="getPlainTextQuestionResponse">
+    <complexType>
+     <sequence>
+      <element name="getPlainTextQuestionReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="postTextQuestion">
+    <complexType>
+     <sequence>
+      <element name="question" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="postTextQuestionResponse">
+    <complexType>
+     <sequence>
+      <element name="postTextQuestionReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getHTMLQuestionResponse">
+
+      <wsdl:part element="impl:getHTMLQuestionResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="roundrotateResponse">
+
+      <wsdl:part element="impl:roundrotateResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getHTMLQuestionRequest">
+
+      <wsdl:part element="impl:getHTMLQuestion" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="roundrotateRequest">
+
+      <wsdl:part element="impl:roundrotate" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPlainTextQuestionResponse">
+
+      <wsdl:part element="impl:getPlainTextQuestionResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="postTextQuestionRequest">
+
+      <wsdl:part element="impl:postTextQuestion" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getXMLQuestionRequest">
+
+      <wsdl:part element="impl:getXMLQuestion" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPlainTextQuestionRequest">
+
+      <wsdl:part element="impl:getPlainTextQuestion" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getXMLQuestionResponse">
+
+      <wsdl:part element="impl:getXMLQuestionResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="postTextQuestionResponse">
+
+      <wsdl:part element="impl:postTextQuestionResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Question">
+
+      <wsdl:operation name="getHTMLQuestion">
+
+         <wsdl:input message="impl:getHTMLQuestionRequest" name="getHTMLQuestionRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getHTMLQuestionResponse" name="getHTMLQuestionResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getXMLQuestion">
+
+         <wsdl:input message="impl:getXMLQuestionRequest" name="getXMLQuestionRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getXMLQuestionResponse" name="getXMLQuestionResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="roundrotate">
+
+         <wsdl:input message="impl:roundrotateRequest" name="roundrotateRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:roundrotateResponse" name="roundrotateResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPlainTextQuestion">
+
+         <wsdl:input message="impl:getPlainTextQuestionRequest" name="getPlainTextQuestionRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getPlainTextQuestionResponse" name="getPlainTextQuestionResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="postTextQuestion">
+
+         <wsdl:input message="impl:postTextQuestionRequest" name="postTextQuestionRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:postTextQuestionResponse" name="postTextQuestionResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="QuestionSoapBinding" type="impl:Question">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getHTMLQuestion">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getHTMLQuestionRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getHTMLQuestionResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getXMLQuestion">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getXMLQuestionRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getXMLQuestionResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="roundrotate">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="roundrotateRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="roundrotateResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPlainTextQuestion">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getPlainTextQuestionRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getPlainTextQuestionResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="postTextQuestion">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="postTextQuestionRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="postTextQuestionResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="QuestionService">
+
+      <wsdl:port binding="impl:QuestionSoapBinding" name="Question">
+
+         <wsdlsoap:address location="http://localhost:8080/com.devopsasaservice.project/services/Question"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

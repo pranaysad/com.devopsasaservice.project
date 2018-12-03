@@ -1,0 +1,39 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from QuestionService WSDL service -->
+
+  <service name="Question" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://project.devopsasaservice.com"/>
+      <parameter name="wsdlServiceElement" value="QuestionService"/>
+      <parameter name="schemaQualified" value="http://project.devopsasaservice.com"/>
+      <parameter name="wsdlServicePort" value="Question"/>
+      <parameter name="className" value="com.devopsasaservice.project.QuestionSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="Question"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="getHTMLQuestion" qname="operNS:getHTMLQuestion" xmlns:operNS="http://project.devopsasaservice.com" returnQName="retNS:getHTMLQuestionReturn" xmlns:retNS="http://project.devopsasaservice.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="getXMLQuestion" qname="operNS:getXMLQuestion" xmlns:operNS="http://project.devopsasaservice.com" returnQName="retNS:getXMLQuestionReturn" xmlns:retNS="http://project.devopsasaservice.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="roundrotate" qname="operNS:roundrotate" xmlns:operNS="http://project.devopsasaservice.com" returnQName="retNS:roundrotateReturn" xmlns:retNS="http://project.devopsasaservice.com" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:strOne" xmlns:pns="http://project.devopsasaservice.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:strTwo" xmlns:pns="http://project.devopsasaservice.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getPlainTextQuestion" qname="operNS:getPlainTextQuestion" xmlns:operNS="http://project.devopsasaservice.com" returnQName="retNS:getPlainTextQuestionReturn" xmlns:retNS="http://project.devopsasaservice.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="postTextQuestion" qname="operNS:postTextQuestion" xmlns:operNS="http://project.devopsasaservice.com" returnQName="retNS:postTextQuestionReturn" xmlns:retNS="http://project.devopsasaservice.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:question" xmlns:pns="http://project.devopsasaservice.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="getPlainTextQuestion postTextQuestion roundrotate getXMLQuestion getHTMLQuestion"/>
+
+  </service>
+</deployment>
